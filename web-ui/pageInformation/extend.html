@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="../../static/node_modules/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <ul>
+
+        <todo-item v-for="item in groceryList" v-bind:aa="item"></todo-item>
+    </ul>
+    <p  @click="myClick" id="aa"> 5555>>>>>>></p>
+</div>
+<script src="../resources/script/extend.js"></script>
+</body>
+</html>
