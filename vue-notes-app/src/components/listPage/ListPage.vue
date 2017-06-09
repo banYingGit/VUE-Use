@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    name: 'hello',
+    name: 'List',
     data: function () {
       return {
         items: [
@@ -28,9 +28,8 @@
     },
     created: function () {
       var url = '/static/data/list.json'
-      this.$http.get(url).then(function (response) {
-        console.log('data', response.body.result)
-//        return response.json()
+      this.$ajax_get(url, function (data) {
+        console.log('data---', data)
       })
     }
   }
