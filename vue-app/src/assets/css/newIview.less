@@ -1,0 +1,60 @@
+@import "color";
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: @color-primary;
+  color: #fff;
+  > h1 {
+    display: block;
+    float: left;
+    width: 200px;
+    text-align: center;
+    line-height: 50px;
+    img {
+      width: 150px;
+      height: 30px;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: @color-bg;
+  .ivu-menu-light {
+    background: none;
+    * {
+      color: @color-f;
+    }
+  }
+  .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
+    background: @color-bg-hover;
+
+  }
+  .ivu-menu-vertical.ivu-menu-light:after {
+    display: none;
+  }
+  .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
+    color: @color-f;
+    border-right: none;
+    background: @color-bg-hover;
+  }
+}
+
+.contain {
+  padding: 0 0 0 200px;
+  width: 100%;
+}
