@@ -3,8 +3,9 @@
  */
 var gulp = require('gulp'),
     less = require('gulp-less'),
-   //确保本地已安装gulp-minify-css [npm install gulp-minify-css --save-dev]
-    cssmin = require('gulp-minify-css');
+//确保本地已安装gulp-minify-css [npm install gulp-minify-css --save-dev]
+    cssmin = require('gulp-minify-css'),
+    cmd = require('gulp-cmd');
 
 //createdCss（自定义任务名称）
 gulp.task('createdCss', function () {
@@ -13,5 +14,20 @@ gulp.task('createdCss', function () {
         .pipe(cssmin())
         .pipe(gulp.dest('src/assets/css')); //将会在src/css下生成index.css
 });
+gulp.task('serve:dist', ['default'], function () {
+        browserSync({
+            notify: false,
+            logPrefix: 'WSK',
+            // Allow scroll syncing across breakpoints
+            scrollElementMapping: ['main', '.mdl-layout'],
+            // Run as an https by uncommenting 'https: true'
+            // Note: this uses an unsigned certificate which on first access
+            //       will present a certificate warning in the browser.
+            // https: true,
+            server: 'dist',
+            port: 3001
 
+        })
+    }
+);
 gulp.task('default', ['createdCss']);
